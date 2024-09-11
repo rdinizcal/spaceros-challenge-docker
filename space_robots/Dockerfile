@@ -40,6 +40,12 @@ ENV DEMO_DIR=${HOME_DIR}/demos_ws
 ENV IGNITION_VERSION fortress
 ENV GZ_VERSION fortress
 
+# Optimize for performance (according to https://www.blackcoffeerobotics.com/blog/gazebo-simulator-5-ways-to-speedup-simulations)
+ENV NVIDIA_VISIBLE_DEVICES \
+  ${NVIDIA_VISIBLE_DEVICES:-all}
+ENV NVIDIA_DRIVER_CAPABILITIES \
+  ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
+
 # Disable prompting during package installation
 ARG DEBIAN_FRONTEND=noninteractive
 
