@@ -1,8 +1,8 @@
 repositories:
   demos:
     type: git
-    url: https://github.com/space-ros/demos.git
-    version: main
+    url: https://github.com/rdinizcal/spaceros-challenge-demos.git
+    version: monitors
   gz_ros2_control:
     type: git
     url: https://github.com/ros-controls/gz_ros2_control.git
@@ -25,11 +25,11 @@ repositories:
     version: humble
   simulation:
     type: git
-    url: https://github.com/space-ros/simulation.git
-    version: main
+    url: https://github.com/rdinizcal/spaceros-challenge-simulation.git
+    version: wrk
   ros-humble-warehouse-ros-mongo:
     type: git
-    url: https://github.com/moveit/warehouse_ros_mongo.git
+    url: https://github.com/ros-planning/warehouse_ros_mongo.git
     version: ros2
   vision_msgs:
     type: git
