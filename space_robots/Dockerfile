@@ -105,6 +105,26 @@ RUN /bin/bash -c 'source ${SPACEROS_DIR}/install/setup.bash && source ${MOVEIT2_
 # Add the user to the render group so that the user can access /dev/dri/renderD128
 RUN sudo usermod -aG render $USERNAME
 
+# ----------------
+
+  ARG USER=spaceros-user
+  ARG PACKAGE_PATH=/home/${USER}/monitors
+  ARG ROS_PATH=/home/${USER}/spaceros/
+  
+  
+  RUN mkdir -p ${PACKAGE_PATH}/src/
+  ADD copilot ${PACKAGE_PATH}/src/copilot
+  USER root
+  RUN chown -R ${USER} ${PACKAGE_PATH}
+  USER ${USER}
+  
+  SHELL ["/bin/bash", "-c"]
+  WORKDIR ${PACKAGE_PATH}
+  # remove this?
+  RUN source ${ROS_PATH}/install/setup.bash && \
+      colcon build
+  # ----------------
+
 # Setup the entrypoint
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
