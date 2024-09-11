@@ -12,5 +12,9 @@ IMG_NAME=openrobotics/space_robots_demo
 CONTAINER_NAME="$(tr '/' '_' <<< "$IMG_NAME")"
 
 # Start the container
-docker run --rm -it --name $CONTAINER_NAME  --network host \
-    -e DISPLAY -e TERM   -e QT_X11_NO_MITSHM=1 $IMG_NAME
+#docker run --rm -it --name $CONTAINER_NAME  --network host \
+#    -e DISPLAY -e TERM   -e QT_X11_NO_MITSHM=1 $IMG_NAME
+
+docker run --rm -it --name $CONTAINER_NAME --net=host \
+ --runtime=nvidia -v $XSOCK:$XSOCK -v $HOME/.Xauthority:/root/.Xauthority --privileged \
+ -e DISPLAY=$DISPLAY -e TERM -e QT_X11_NO_MITSHM=1 $IMG_NAME
