@@ -2,7 +2,7 @@ repositories:
   demos:
     type: git
     url: https://github.com/rdinizcal/spaceros-challenge-demos.git
-    version: monitors
+    version: rover_services_update
   gz_ros2_control:
     type: git
     url: https://github.com/ros-controls/gz_ros2_control.git
@@ -40,3 +40,7 @@ repositories:
     url: https://github.com/swri-robotics/gps_umd.git
     path: gps_msgs
     version: 113782d
+  behaviortree_cpp_v3:
+    type: git
+    url: https://github.com/BehaviorTree/BehaviorTree.CPP.git
+    version: 3.8.7
