@@ -2,7 +2,7 @@ repositories:
   demos:
     type: git
     url: https://github.com/rdinizcal/spaceros-challenge-demos.git
-    version: rover_services_update
+    version: main
   gz_ros2_control:
     type: git
     url: https://github.com/ros-controls/gz_ros2_control.git
